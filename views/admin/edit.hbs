@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3">
+      <div class="card">
+        <div class="card-header bg-danger">
+          <h4>Editar</h4>
+        </div>
+        <div class="card-body">
+          <form method="post" action="/admin/edit-peliculas">
+            <input type="hidden" value="{{peli.id}}" name="id" />
+            <label class="form-label">Nombre: </label>
+            <input
+              name="nombre"
+              value="{{this.peli.nombre}}"
+              class="form-control"
+              required
+            />
+            <label class="form-label">Descripcion: </label>
+            <input
+              name="descripcion"
+              value="{{peli.descripcion}}"
+              class="form-control"
+              required
+            />
+            <label class="form-label">Genero: </label>
+            <select
+              class="form-control"
+              name="genero"
+              aria-valuenow="{{peli.genero}}"
+            >
+              <option value="Accion" selected>Accion</option>
+              <option value="Terror">Terror</option>
+              <option value="Comedia">Comedia</option>
+              <option value="Suspenso">Suspenso</option>
+              <option value="Documentales">Documentales</option>
+            </select>
+
+            <label class="form-label">Status: </label>
+            <select
+              class="form-control"
+              name="status"
+              aria-valuenow="{{peli.Status}}"
+            >
+              <option value="true" selected>Activo</option>
+              <option value="false">Inactivo</option>
+            </select>
+            <label class="form-label">Color Del Genero: </label>
+            <select
+              class="form-control"
+              name="colorgenero"
+              aria-valuenow="{{peli.colorGenero}}"
+            >
+              <option value="dark" selected>Negro</option>
+              <option value="primary">Azul</option>
+              <option value="danger">Rojo</option>
+              <option value="info">Azul Claro</option>
+              <option value="warning">Naranja</option>
+            </select>
+            <button type="submit" class="btn btn-danger mt-3">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
